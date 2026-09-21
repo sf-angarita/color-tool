@@ -1,12 +1,12 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { CompA } from './comp-a/comp-a';
+import { CompB } from './comp-b/comp-b';
+import { CompC } from './comp-c/comp-c';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [CompA,CompB,CompC],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
-  protected readonly title = signal('color-tool');
-}
+export class App {}

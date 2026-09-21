@@ -1,0 +1,38 @@
+<div class="h-100 d-flex justify-content-center align-items-center gap-3">
+  <div class="display-3 fw-bold text-uppercase">
+    {{ channel() }}
+  </div>
+
+  @if (channel().toUpperCase() === 'R') {
+    <input
+      #value
+      maxlength="2"
+      class="form-control form-control-lg text-center"
+      style="width: 5rem;"
+      [value]="backgroundService.rChannel()"
+      (input)="updateChannel(value.value)"
+    />
+  }
+  
+  @if (channel().toUpperCase() === 'G') {
+    <input
+      #value
+      maxlength="2"
+      class="form-control form-control-lg text-center"
+      style="width: 5rem;"
+      [value]="backgroundService.gChannel()"
+      (input)="updateChannel(value.value)"
+    />
+  }
+  
+  @if (channel().toUpperCase() === 'B') {
+    <input
+      #value
+      maxlength="2"
+      class="form-control form-control-lg text-center"
+      style="width: 5rem;"
+      [value]="backgroundService.bChannel()"
+      (input)="updateChannel(value.value)"
+    />
+  }
+</div>

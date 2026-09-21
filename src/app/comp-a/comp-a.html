@@ -1,0 +1,13 @@
+<form
+  [formGroup]="colorForm"
+  (ngSubmit)="guardar()"
+  class="d-flex justify-content-center align-items-center gap-2"
+>
+  <input
+    type="text"
+    formControlName="color"
+    class="form-control w-auto text-uppercase"
+    placeholder="47F905"
+  />
+  <button type="submit" class="btn btn-primary">Show</button>
+</form>
