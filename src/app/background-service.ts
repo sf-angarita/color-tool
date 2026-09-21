@@ -22,12 +22,12 @@ export class BackgroundService {
     this.wholeColor.set(entry.color);
   }
 
-  updateChannel(channel: 'R' | 'G' | 'B', value: string): void {
+  updateChannel(channel: String, value: string): void {
     const hex = value.trim().toUpperCase();
     if (!/^[0-9A-F]{2}$/.test(hex)) return;
 
     const offsets = { R: 0, G: 2, B: 4 };
-    const start = offsets[channel];
+    const start = channel ==="R" ? 0 : channel === "G" ? 2 : 4;
     const color = this.wholeColor();
 
     this.wholeColor.set(`${color.slice(0, start)}${hex}${color.slice(start + 2)}`);

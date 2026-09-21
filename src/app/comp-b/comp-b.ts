@@ -15,9 +15,7 @@ export class CompB {
   readonly valueChange = output<string>();
 
   updateChannel(value: string): void {
-    const channel = this.channel().toUpperCase();
-    if (channel !== 'R' && channel !== 'G' && channel !== 'B') return;
-
+    const channel = this.channel();
     this.backgroundService.updateChannel(channel, value);
     this.valueChange.emit(value);
   }
